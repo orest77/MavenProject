@@ -1,33 +1,10 @@
-package Tests.AddProductsTest;
+package Tests.ProductsTest;
 
 import Logic.Logic;
-import Tools.Application;
-import org.junit.*;
+import org.junit.Assert;
+import org.junit.Test;
 
-public class AddToBasketTest {
-
-
-    @BeforeClass
-    public static void BeforeAllMethods() {
-        Application.Get();
-    }
-
-    @AfterClass
-    public static void AfterAllMethods() {
-
-        Application.Remove();
-    }
-
-    @Before
-    public void SetUp() {
-        Application.Get().BaseUrlAction();
-    }
-
-    @After
-    public void TearDown() {
-        // Logout
-        Application.Remove();
-    }
+public class AddToBasketTest extends ATestRunner {
 
     @Test
     public void AddProductOfBasketTest() {

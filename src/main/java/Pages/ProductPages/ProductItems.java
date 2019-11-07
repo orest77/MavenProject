@@ -6,9 +6,9 @@ import org.openqa.selenium.WebElement;
 public class ProductItems {
     protected WebElement current;
 
-    protected WebElement productName ;
-    protected WebElement productBuy ;
-    protected WebElement productPrice ;
+    private WebElement productName ;
+    private WebElement productBuy ;
+    private WebElement productPrice ;
 
     public ProductItems(WebElement current) {
         this.current = current;
@@ -33,8 +33,13 @@ public class ProductItems {
         return productPrice.getText();
     }
 
+
     public boolean IsAppropriate(String product) {
 
         return (product.toLowerCase().equals(getTextProductName().toLowerCase().trim()));
+    }
+
+    public boolean CheckByName(String product) {
+        return (getTextProductName().toLowerCase().trim().toLowerCase().contains(product.toLowerCase().trim()));
     }
 }

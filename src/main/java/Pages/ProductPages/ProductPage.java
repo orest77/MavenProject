@@ -90,8 +90,21 @@ public class ProductPage extends ConfigFilter {
         return this;
     }
 
+    public Boolean CheckAllProductByName(String name) {
+        Boolean isPresent = null;
+        for (ProductItems item : productItem) {
+            if (item.CheckByName(name)) {
+                isPresent = true;
+            }
+            else {
+                isPresent =false;
+            }
+        }
+        return isPresent;
+    }
+
+
     public String GetTextBasket() {
         return new SearchBar(driver).getTextBasketListButton();
     }
-
 }
