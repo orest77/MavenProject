@@ -1,16 +1,18 @@
 package Tests.ProductsTest;
 
 import Logic.Logic;
-import org.junit.Assert;
-import org.junit.Test;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
 
 public class AddToBasketTest extends ATestRunner {
+
 
     @Test
     public void AddProductOfBasketTest() {
         //Arrange
         String codeIDExpected = "Код: 1342821";
-        String productName = "Ноутбук игровой Acer Nitro 5 AN515-52-5601 (NH.Q3LEU.074) Shale Black";
+        String productName = "Ноутбук игровой Acer Nitro 5 AN515-52-50Z0 (NH.Q3MEU.004)";
         String countProducts = "1";
         Logic mainPage = new Logic();
 
@@ -27,7 +29,7 @@ public class AddToBasketTest extends ATestRunner {
         //Close Page an verify basket list it's  button on search bar
         String actualResult2 = mainPage.addProductToBasketListAndGetString();
         //Assert
-        Assert.assertEquals(countProducts,actualResult2);
+        Assert.assertEquals(actualResult2, countProducts);
 
     }
 }

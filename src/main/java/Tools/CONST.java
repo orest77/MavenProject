@@ -5,7 +5,7 @@ public class CONST {
     /// <summary>
     /// Applications Source Environments
     /// </summary>
-    public static  String SELENIUM_HUB = "http://40.117.190.188:4444/wd/hub";
+    public static  String SELENIUM_HUB = "http://35.235.90.103:4444/wd/hub";
     public static  String BASE_URL = "https://comfy.ua/gaming";
     public static  String LOGIN_URL = "https://comfy.ua/gaming/";
     public static  String LOGOUT_URL = "https://comfy.ua/gaming/";

@@ -25,8 +25,9 @@ public class ProductItems {
         return productName.getText();
     }
 
-    public void clickBuyProductButton() {
+    public ProductItems clickBuyProductButton() {
         productBuy.click();
+        return this;
     }
 
     public String getTextProductPrice() {
@@ -35,8 +36,7 @@ public class ProductItems {
 
 
     public boolean IsAppropriate(String product) {
-
-        return (product.toLowerCase().equals(getTextProductName().toLowerCase().trim()));
+        return (product.toLowerCase().toLowerCase().trim().equals(getTextProductName().toLowerCase().trim()));
     }
 
     public boolean CheckByName(String product) {

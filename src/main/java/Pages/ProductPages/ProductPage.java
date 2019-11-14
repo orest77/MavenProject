@@ -4,7 +4,6 @@ import Pages.Header.SearchBar;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -91,16 +90,12 @@ public class ProductPage extends ConfigFilter {
     }
 
     public Boolean CheckAllProductByName(String name) {
-        Boolean isPresent = null;
         for (ProductItems item : productItem) {
             if (item.CheckByName(name)) {
-                isPresent = true;
-            }
-            else {
-                isPresent =false;
+                return true;
             }
         }
-        return isPresent;
+        return false;
     }
 
 

@@ -2,17 +2,19 @@ package Tests.ProductsTest;
 
 import Data.ApplicationSourceRepository;
 import Tools.Application;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.experimental.ParallelComputer;
-import org.junit.runner.JUnitCore;
+
+import org.junit.runner.RunWith;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+
+import java.net.MalformedURLException;
 
 public abstract class ATestRunner {
 
     @BeforeClass
-    public static void BeforeAllMethods() {
+    public static void BeforeAllMethods() throws MalformedURLException {
         Application.Get(ApplicationSourceRepository.Get().ChromeMaximizedWithUi());
     }
 
@@ -22,12 +24,12 @@ public abstract class ATestRunner {
         Application.Remove();
     }
 
-    @Before
+    @BeforeMethod
     public void SetUp() {
         Application.Get().BaseUrlAction();
     }
 
-    @After
+    @AfterMethod
     public void TearDown() {
         // Logout
         Application.Remove();

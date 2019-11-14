@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.locks.ReentrantLock;
 
 public class ApplicationSourceRepository {
     private static volatile ApplicationSourceRepository _instance;
@@ -31,7 +30,7 @@ public class ApplicationSourceRepository {
     public IApplicationSource ChromeWithUi() {
         return ApplicationSource.Get()
                 .SetBrowserName(CONST.CHROME_BROWSER)
-                .SetImplicitWaitTimeOut(15l)
+                .SetImplicitWaitTimeOut(15L)
                 .SetExplicitTimeOut(10L)
                 .SetBaseUrl(CONST.BASE_URL)
                 .SetLoginUrl(CONST.LOGIN_URL)
@@ -110,9 +109,10 @@ public class ApplicationSourceRepository {
     public IApplicationSource RemoteChrome() throws MalformedURLException {
         List<String> options = new ArrayList<String>();
         options.add("--headless");
-        options.add("--no-gpu");
+        options.add("--display=:99.0");
+       // options.add("--no-gpu");
         options.add("--disable-software-rasterizer");
-        options.add("--mute-audio");
+       // options.add("--mute-audio");
         options.add("--hide-scrollbars");
 
         Map<String, Object> capabilities = new HashMap<String, Object>();

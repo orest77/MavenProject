@@ -142,7 +142,12 @@ public abstract class ConfigFilter {
 
     public ProductPage clickShowResult() {
         WebElement showResult;
-        showResult = driver.findElement(By.cssSelector(".price-filter__submit-link"));
+        showResult = driver.findElement(By.className("price-filter__submit-link"));
+        try {
+            Thread.sleep(1500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         if (showResult.isDisplayed())
             showResult.click();
         return new ProductPage(driver);
