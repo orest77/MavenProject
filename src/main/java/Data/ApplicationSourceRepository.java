@@ -108,11 +108,8 @@ public class ApplicationSourceRepository {
 
     public IApplicationSource RemoteChrome() throws MalformedURLException {
         List<String> options = new ArrayList<String>();
+        //If use windows then add this options "--no-gpu" and "--mute-audio", "--disable-software-rasterizer"
         options.add("--headless");
-        options.add("--display=:99.0");
-       // options.add("--no-gpu");
-        options.add("--disable-software-rasterizer");
-       // options.add("--mute-audio");
         options.add("--hide-scrollbars");
 
         Map<String, Object> capabilities = new HashMap<String, Object>();

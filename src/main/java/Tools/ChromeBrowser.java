@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 public class ChromeBrowser implements Browser {
     @Override
     public WebDriver GetBrowser(IApplicationSource applicationSource) {
-        File file = new File("D:\\Chrome\\chromedriver_win32\\chromedriver.exe");
+        File file = new File(CONST.PATH_LINUX_CHROME_DRIVER);
         System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
         if (applicationSource.GetBrowserOptions() != null)
         {
