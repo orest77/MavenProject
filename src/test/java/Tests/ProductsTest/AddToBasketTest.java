@@ -9,7 +9,7 @@ public class AddToBasketTest extends ATestRunner {
 
 
     @Test
-    public void AddProductOfBasketTest() {
+    public void addProductOfBasketTest() {
         //Arrange
         String codeIDExpected = "Код: 1342821";
         String productName = "Ноутбук игровой Acer Nitro 5 AN515-52-50Z0 (NH.Q3MEU.004)";

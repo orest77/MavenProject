@@ -2,8 +2,6 @@ package Tests.ProductsTest;
 
 import Data.ApplicationSourceRepository;
 import Tools.Application;
-
-import org.junit.runner.RunWith;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
