@@ -15,7 +15,7 @@ public class ProductPage extends ConfigFilter {
     private WebElement displayThreeColumns;
     private WebElement displayFourColumns;
     private WebElement displayList;
-    protected List<ProductItems> productItem;
+    private List<ProductItems> productItem;
 
     public ProductPage(WebDriver driver) {
         super(driver);
@@ -28,7 +28,7 @@ public class ProductPage extends ConfigFilter {
         displayThreeColumns = driver.findElement(By.xpath("(//div[@id='categoryToolbar']//div[@class='tooltip'])[1]"));
         displayFourColumns = driver.findElement(By.xpath("(//div[@id='categoryToolbar']//div[@class='tooltip'])[2]"));
         displayList = driver.findElement(By.xpath("(//div[@id='categoryToolbar']//div[@class='tooltip'])[3]"));
-        productItem = InitializeListSearchResult(driver.findElements(By.cssSelector(".product-item__i")));
+        productItem = InitializeListSearchResult(driver.findElements(By.className("product-item__i")));
     }
 
     public List<ProductItems> InitializeListSearchResult(List<WebElement> elements) {
