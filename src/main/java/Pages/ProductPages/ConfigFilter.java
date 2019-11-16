@@ -143,13 +143,15 @@ public abstract class ConfigFilter {
     public ProductPage clickShowResult() {
         WebElement showResult;
         showResult = driver.findElement(By.className("price-filter__submit-link"));
-        try {
-            Thread.sleep(1500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        if (showResult.isDisplayed())
+
+        if (showResult.isDisplayed()) {
+            try {
+                Thread.sleep(2500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             showResult.click();
+        }
         return new ProductPage(driver);
     }
 }

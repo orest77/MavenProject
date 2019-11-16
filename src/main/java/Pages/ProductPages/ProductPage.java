@@ -23,7 +23,7 @@ public class ProductPage extends ConfigFilter {
     }
 
     private void initWebElements() {
-        infoTitle = driver.findElement(By.cssSelector(".category-info__title"));
+        infoTitle = driver.findElement(By.className("category-info__title"));
         productsCount = driver.findElement(By.id("productsCount"));
         displayThreeColumns = driver.findElement(By.xpath("(//div[@id='categoryToolbar']//div[@class='tooltip'])[1]"));
         displayFourColumns = driver.findElement(By.xpath("(//div[@id='categoryToolbar']//div[@class='tooltip'])[2]"));

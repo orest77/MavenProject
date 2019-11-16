@@ -1,11 +1,9 @@
 package Tests.ProductsTest;
 
 import Data.ApplicationSourceRepository;
+import Pages.Main.MainPage;
 import Tools.Application;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.*;
 
 import java.net.MalformedURLException;
 
@@ -13,23 +11,26 @@ public abstract class ATestRunner {
 
     @BeforeClass
     public static void BeforeAllMethods() throws MalformedURLException {
-        Application.Get(ApplicationSourceRepository.Get().RemoteLinuxChromeNew());
-    }
-
-    @AfterClass
-    public static void AfterAllMethods() {
-
-        Application.Remove();
+        Application.Get(ApplicationSourceRepository.Get().ChromeWithUi());
     }
 
     @BeforeMethod
     public void SetUp() {
-        Application.Get().BaseUrlAction();
+        BaseUrlAction();
     }
 
-    @AfterMethod
+    @AfterTest
     public void TearDown() {
         // Logout
         Application.Remove();
+    }
+
+    private MainPage BaseUrlAction() {
+        Application.Get().getBrowser().OpenUrl(Application.Get()
+                .getApplicationSource()
+                .GetBaseUrl());
+        return new MainPage(Application.Get()
+                .getBrowser()
+                .Driver);
     }
 }

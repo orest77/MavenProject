@@ -36,7 +36,7 @@ public class Logic {
         return mainPage.clickLaptop();
     }
 
-    public ProductPage configurFilterForProduct(String forPrice, String toPrice, String brand
+    public ProductPage configureFilterForProduct(String forPrice, String toPrice, String brand
             , String modelCPU, String RAM, String driver) {
         return new ProductPage(Application.Get().getBrowser().Driver)
                 .choosePriceRange(forPrice, toPrice)

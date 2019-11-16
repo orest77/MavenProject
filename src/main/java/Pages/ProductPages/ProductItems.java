@@ -16,7 +16,7 @@ public class ProductItems {
     }
 
     private void initWebElements() {
-        productName = current.findElement(By.className("product-item__name"));
+        productName = current.findElement(By.cssSelector(".product-item__name"));
         productBuy = current.findElement(By.xpath("//span[@class='buy']"));
         productPrice = current.findElement(By.cssSelector("span.price-value"));
     }

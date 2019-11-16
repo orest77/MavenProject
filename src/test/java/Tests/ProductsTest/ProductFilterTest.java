@@ -26,7 +26,7 @@ public class ProductFilterTest extends ATestRunner {
         Assert.assertTrue(actualResult);
 
         //Step 2  Choose price, brand , model core, ram memory and hard disk
-        boolean actualResult1 = logic.configurFilterForProduct(forPrice, toPrice, brand, modelCPU
+        boolean actualResult1 = logic.configureFilterForProduct(forPrice, toPrice, brand, modelCPU
                 ,ram, driver).CheckAllProductByName(brand);
         System.out.println(actualResult1);
         //Assert
