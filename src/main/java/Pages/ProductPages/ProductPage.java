@@ -31,7 +31,7 @@ public class ProductPage extends ConfigFilter {
         productItem = InitializeListSearchResult(driver.findElements(By.className("product-item__i")));
     }
 
-    public List<ProductItems> InitializeListSearchResult(List<WebElement> elements) {
+    private List<ProductItems> InitializeListSearchResult(List<WebElement> elements) {
         List<ProductItems> list = new ArrayList<ProductItems>();
         for (WebElement current : elements) {
             list.add(new ProductItems(current));

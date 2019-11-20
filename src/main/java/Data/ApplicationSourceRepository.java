@@ -88,10 +88,12 @@ public class ApplicationSourceRepository {
         List<String> options = new ArrayList<String>();
         options.add("--no-sandbox");
         options.add("--display=:99.0");
+        options.add("--disable-infobars");
+        options.add("--no-gpu");
 
         Map<String, Object> capabilities = new HashMap<String, Object>();
         capabilities.put("browser", CONST.CHROME_BROWSER);
-        capabilities.put(CapabilityType.PLATFORM, "Linux");
+        capabilities.put(CapabilityType.PLATFORM_NAME, "Linux");
 
         return ApplicationSource.Get()
                 .SetBrowserName(CONST.REMOTE_BROWSER)
@@ -108,13 +110,12 @@ public class ApplicationSourceRepository {
 
     public IApplicationSource RemoteChrome() throws MalformedURLException {
         List<String> options = new ArrayList<String>();
-        //If use windows then add this options "--no-gpu" and "--mute-audio", "--disable-software-rasterizer"
-        options.add("--headless");
-        options.add("--hide-scrollbars");
+        options.add("--no-sandbox");
+        options.add("--display=:99.0");
 
         Map<String, Object> capabilities = new HashMap<String, Object>();
         capabilities.put("browser", CONST.CHROME_BROWSER);
-        capabilities.put(CapabilityType.PLATFORM, "Linux");
+        capabilities.put(CapabilityType.PLATFORM_NAME, "Linux");
 
 
         return ApplicationSource.Get()
@@ -139,7 +140,7 @@ public class ApplicationSourceRepository {
 
         Map<String, Object> capabilities = new HashMap<String, Object>();
         capabilities.put("browser", CONST.FIREFOX_BROWSER);
-        capabilities.put(CapabilityType.PLATFORM, "Linux");
+        capabilities.put(CapabilityType.PLATFORM_NAME, "Linux");
 
         return ApplicationSource.Get()
                 .SetBrowserName(CONST.REMOTE_BROWSER)

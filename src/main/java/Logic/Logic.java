@@ -2,10 +2,8 @@ package Logic;
 
 import Pages.Main.MainPage;
 import Pages.ProductPages.BasketProduct;
-import Pages.ProductPages.ConfigFilter;
 import Pages.ProductPages.ProductPage;
 import Tools.Application;
-import org.openqa.selenium.WebDriver;
 
 public class Logic {
 

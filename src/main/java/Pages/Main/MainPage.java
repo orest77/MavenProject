@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class MainPage {
-    private WebDriver driver;
+    private final WebDriver driver;
 
     private WebElement image;
     private WebElement mouse;

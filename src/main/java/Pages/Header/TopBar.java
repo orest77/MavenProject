@@ -8,11 +8,11 @@ import java.util.List;
 
 public abstract class TopBar {
 
-    protected WebDriver driver;
+    protected final WebDriver driver;
 
-    private List<WebElement>navigationButtons;
+    private final List<WebElement>navigationButtons;
 
-    private WebElement telephoneButton ;
+    private final WebElement telephoneButton ;
 
 
     public TopBar(WebDriver driver) {

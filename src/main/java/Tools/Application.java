@@ -20,7 +20,7 @@ public class Application {
 
     private IApplicationSource ApplicationSource;
 
-    private static Map<Long, AllBrowser> _browser  = new HashMap<Long, AllBrowser>();;
+    private static final Map<Long, AllBrowser> _browser  = new HashMap<Long, AllBrowser>();
 
     protected AllBrowser Browser;
 
@@ -33,7 +33,7 @@ public class Application {
         return _browser.get(currentThread);
     }
 
-    public Application(IApplicationSource applicationSource) {
+    private Application(IApplicationSource applicationSource) {
         ApplicationSource = applicationSource;
     }
 

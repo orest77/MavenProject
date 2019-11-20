@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 public class AllBrowser {
 
-    private Map<String, Browser> _browsers = new HashMap<String, Browser>();
+    private final Map<String, Browser> _browsers = new HashMap<String, Browser>();
 
     public WebDriver Driver;
 
@@ -38,7 +38,8 @@ public class AllBrowser {
             }
         }
         Driver = currentBrowser.GetBrowser(applicationSource);
-        Driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        Driver.manage().timeouts().implicitlyWait(applicationSource.GetImplicitWaitTimeOut()
+                , TimeUnit.SECONDS);
     }
 
     public void OpenUrl(String url) {

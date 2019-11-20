@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public abstract class ConfigFilter {
-    protected WebDriver driver;
+    protected final WebDriver driver;
 
     private WebElement priceFrom;
     private WebElement priceTo;
@@ -141,15 +141,17 @@ public abstract class ConfigFilter {
     }
 
     public ProductPage clickShowResult() {
+
+        try {
+            Thread.sleep(2500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         WebElement showResult;
-        showResult = driver.findElement(By.className("price-filter__submit-link"));
+        showResult = driver.findElement(By.cssSelector(".price-filter__submit-link"));
 
         if (showResult.isDisplayed()) {
-            try {
-                Thread.sleep(2500);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+
             showResult.click();
         }
         return new ProductPage(driver);

@@ -8,11 +8,11 @@ import java.util.List;
 
 public class BasketProduct {
 
-    protected WebDriver driver;
+    protected final WebDriver driver;
 
-    private List<WebElement> goods;
-    private WebElement codeProduct;
-    private WebElement closeButton;
+    private final List<WebElement> goods;
+    private final WebElement codeProduct;
+    private final WebElement closeButton;
 
     public BasketProduct(WebDriver driver) {
         this.driver = driver;
@@ -29,11 +29,7 @@ public class BasketProduct {
     public boolean isAppropriate(String name) {
         boolean isContains = true;
         for (int i = 0; i < goods.size(); i++) {
-            if (goods.get(i).getText().equals(name)) {
-                isContains = true;
-            } else {
-                isContains = false;
-            }
+            isContains = goods.get(i).getText().equals(name);
         }
         return isContains;
     }

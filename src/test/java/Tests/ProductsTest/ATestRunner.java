@@ -3,7 +3,9 @@ package Tests.ProductsTest;
 import Data.ApplicationSourceRepository;
 import Pages.Main.MainPage;
 import Tools.Application;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 
 import java.net.MalformedURLException;
 
@@ -25,11 +27,11 @@ public abstract class ATestRunner {
         Application.Remove();
     }
 
-    private MainPage BaseUrlAction() {
+    private void BaseUrlAction() {
         Application.Get().getBrowser().OpenUrl(Application.Get()
                 .getApplicationSource()
                 .GetBaseUrl());
-        return new MainPage(Application.Get()
+        new MainPage(Application.Get()
                 .getBrowser()
                 .Driver);
     }
