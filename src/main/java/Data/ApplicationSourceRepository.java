@@ -53,6 +53,10 @@ public class ApplicationSourceRepository {
     public IApplicationSource ChromeMaximizedWithUi() {
         List<String> options = new ArrayList<String>();
         options.add("--start-maximized");
+        options.add("--no-sandbox");
+        options.add("--disable-gpu");
+        options.add("disable-infobars");
+        options.add("--disable-extensions");
         options.add("--no-proxy-server");
         options.add("--ignore-certificate-errors");
 
@@ -70,6 +74,8 @@ public class ApplicationSourceRepository {
     public IApplicationSource ChromeWithoutUi() {
         List<String> options = new ArrayList<String>();
         options.add("--headless");
+        options.add("--no-sandbox");
+        options.add("--disable-gpu");
         options.add("--no-proxy-server");
         options.add("--ignore-certificate-errors");
 
@@ -86,10 +92,13 @@ public class ApplicationSourceRepository {
 
     public IApplicationSource RemoteLinuxChromeNew() throws MalformedURLException {
         List<String> options = new ArrayList<String>();
+        options.add("--headless");
         options.add("--no-sandbox");
         options.add("--display=:99.0");
-        options.add("--disable-infobars");
-        options.add("--no-gpu");
+        options.add("disable-infobars");
+        options.add("--disable-extensions");
+        options.add("--ignore-certificate-errors");
+        options.add("--acceptInsecureCerts-false");
 
         Map<String, Object> capabilities = new HashMap<String, Object>();
         capabilities.put("browser", CONST.CHROME_BROWSER);
@@ -135,6 +144,10 @@ public class ApplicationSourceRepository {
     public IApplicationSource RemoteFirefox() throws MalformedURLException {
         List<String> options = new ArrayList<String>();
         options.add("--headless");
+        options.add("--no-sandbox");
+        options.add("--display=:99.0");
+        options.add("disable-infobars");
+        options.add("--disable-extensions");
         options.add("--ignore-certificate-errors");
         options.add("--acceptInsecureCerts-false");
 

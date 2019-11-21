@@ -13,7 +13,7 @@ public abstract class ATestRunner {
 
     @BeforeClass
     public static void BeforeAllMethods() throws MalformedURLException {
-        Application.Get(ApplicationSourceRepository.Get().RemoteLinuxChromeNew());
+        Application.Get(ApplicationSourceRepository.Get().ChromeMaximizedWithUi());
     }
 
     @BeforeMethod
